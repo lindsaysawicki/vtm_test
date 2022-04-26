@@ -48,12 +48,8 @@ def test_estimate_info_height_route(app, client):
         assert b"Height" in res.data
 
 
-def test_height_functionality(app, client):
-    """ 
-    GIVEN a Flask application configured for testing
-    WHEN the 'future' button is selected (POST)
-    THEN check that the correct age is returned to the user
-    """
+"""def test_height_functionality(app, client):
+
     print("-- /estimate_info 'height' POST test")
     # Functional test - it puts POST data in the age route and looks for the correct value to be returned
     # individual functions to perform the calculations are tested in the Unit tests
@@ -75,5 +71,5 @@ def test_radius_functionality(app, client):
         calc_t = {"radius":"180", "radius":"x"} 
         res = test_client.post('/estimate_info', data=calc_t)
         assert res.status_code == 200 
-        assert b"1.7444444444444445" in res.data
+        assert b"1.7444444444444445" in res.data"""
 
