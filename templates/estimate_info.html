@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Create An Estimate{% endblock %}
+
+
+{% block body %}  
+<html>
+<body>
+
+<h1>Create an Estimate</h1>
+<hr>
+<br>
+
+<form action="/estimate_info" method="POST">
+  <label for="height">Height:</label>
+  <input type="text" id="height" name="age" autofocus required>
+  <br><br/>
+  <label for="radius">Radius:</label>
+  <input type="text" id="radius" name="age" autofocus required>
+
+  <input type="submit" name="submit" value="Submit">
+  <br><br/>
+
+</form> 
+
+<p>If you click the "Submit" button, you will recieve an estimate cost. </p>
+
+</body>
+</html>
+<hr>
+<p> &copy VTM</p>
+{% if age %} {{age}} {% endif %} {% endblock %}
