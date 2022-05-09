@@ -42,9 +42,18 @@ def estimate():
         form = request.form
         radius = form['radius']
         height = form['height']
-        if 'radius' and 'height' in request.form:
-            t=calculate_total_area(total_cost)
-        return render_template('estimate_info.html', pageTitle='Calculate Your estimate', t=t)
+        p= 3.14
+        L= 15
+        M= 25
+
+        top_area= p*(radius*radius)
+        side_area= p*((radius*height)*2)
+        total_area= top_area+side_area
+        total_area_sq_ft=total_area/(144)
+        total_cost=(total_area_sq_ft*(L)+total_area_sq_ft*(M))
+
+
+        return render_template('estimate_info.html', pageTitle='Calculate Your estimate', data=total_cost)
     return render_template('estimate_info.html', pageTitle='Calculate Your estimate')
 
 
