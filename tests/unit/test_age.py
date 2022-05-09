@@ -1,10 +1,10 @@
 import app
 
-def test_calculate_current_age():
+def test_calculate_cost():
 
     print("\r")
     print(" -- calculate_total_cost unit test")
-    assert app.calculate_total_area(2000) == 1.7444444444444445  #will change as the years progress
+    assert app.calculate_total_area(3235.5) == 1.7444444444444445   #will change as the years progress
 
 
 """def test_calculate_future_age():

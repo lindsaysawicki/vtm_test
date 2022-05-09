@@ -48,7 +48,7 @@ def test_estimate_info_height_route(app, client):
         assert b"Height" in res.data
 
 
-"""def test_height_functionality(app, client):
+def test_estimate_functionality(app, client):
 
     print("-- /estimate_info 'height' POST test")
     # Functional test - it puts POST data in the age route and looks for the correct value to be returned
@@ -56,20 +56,11 @@ def test_estimate_info_height_route(app, client):
     with app.test_client() as test_client:
         # pass in the data use Chrome Developer Tools -> Network -> Click on page -> Payload
         # passing future age value as 'x' because I look for the key(future_age), not the value in app.py if/then stmt
-        calc_t = {"height":"360", "height":"x"} 
-        res = test_client.post('/estimate_info', data=calc_t)
+        data = {"height":"360", "radius":"180"} 
+        res = test_client.post('/estimate_info', data=data)
         assert res.status_code == 200 
-        assert b"1.7444444444444445" in res.data # may need adjusted depending on current year
+        assert b"$141300.0" in res.data 
 
-def test_radius_functionality(app, client):
-    print("-- /estimate_info 'radius' POST test")
-    # Functional test - it puts POST data in the age route and looks for the correct value to be returned
-    # individual functions to perform the calculations are tested in the Unit tests
-    with app.test_client() as test_client:
-        # pass in the data use Chrome Developer Tools -> Network -> Click on page -> Payload
-        # passing future age value as 'x' because I look for the key(future_age), not the value in app.py if/then stmt
-        calc_t = {"radius":"180", "radius":"x"} 
-        res = test_client.post('/estimate_info', data=calc_t)
-        assert res.status_code == 200 
-        assert b"1.7444444444444445" in res.data"""
+
+
 
