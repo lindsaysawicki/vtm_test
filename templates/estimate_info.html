@@ -4,29 +4,36 @@
 
 
 {% block body %}  
-<html>
-<body>
 
-<h1>Create an Estimate</h1>
-<hr>
-<br>
 
-<form action="/estimate_info" method="POST">
-  <label for="height">Height:</label>
-  <input type="text" id="height" name="height" autofocus required>
-  <br><br/>
-  <label for="radius">Radius:</label>
-  <input type="text" id="radius" name="radius" autofocus required>
+  <h1>Create an Estimate</h1>
+  <hr>
+    <p>
+  <br>
 
-  <input type="submit" name="total_cost" value="Submit">
-  <br><br/>
+  <form action="/estimate_info" method="POST">
+    <label for="t_height">
+      Height:
+      <input type="text"  name="height" id="t_height" autofocus required>
+    </label>
+    </p>
+    
+    <p>
+    <label for="t_radius">
+      Radius:
+      <input type="text" name="radius" id="t_radius" autofocus required>
+    </label>
+   </p>
+    <input type="submit" value="Submit">
 
-</form> 
 
-<p>If you click the "Submit" button, you will recieve an estimate cost. </p>
+  </form> 
+  {%if data%}
+  <p>
+    <h3> You're cost is ${{data}}</h3> 
+  </p>
 
-</body>
-</html>
-<hr>
-<p> &copy VTM</p>
-{% if t %} {{t}} {% endif %} {% endblock %}
+  <hr>
+  <p> &copy VTM</p>
+  {% endif %} 
+{% endblock %}

@@ -40,8 +40,8 @@ def estimate():
     if request.method == 'POST':
         #capture height & radius from form:
         form = request.form
-        radius = form['radius']
-        height = form['height']
+        radius = float(form['radius'])
+        height = float(form['height'])
         p= 3.14
         L= 15
         M= 25
@@ -53,8 +53,8 @@ def estimate():
         total_cost=(total_area_sq_ft*(L)+total_area_sq_ft*(M))
 
 
-        return render_template('estimate_info.html', pageTitle='Calculate Your estimate', data=total_cost)
-    return render_template('estimate_info.html', pageTitle='Calculate Your estimate')
+        return render_template('estimate_info.html', data=total_cost)
+    return render_template('estimate_info.html')
 
 
 
